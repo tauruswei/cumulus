@@ -739,6 +739,7 @@ impl<T: Config> Pallet<T> {
 		let mut dmq_head = <LastDmqMqcHead<T>>::get();
 
 		let mut weight_used = 0;
+		log::info!("========================== downward_messages length is {:?} ==============================",dm_count);
 		if dm_count != 0 {
 			Self::deposit_event(Event::DownwardMessagesReceived(dm_count));
 			let max_weight =
