@@ -294,6 +294,7 @@ pub mod pallet {
 			data: ParachainInherentData,
 		) -> DispatchResultWithPostInfo {
 			ensure_none(origin)?;
+			log::info!("-------------------- set_validation_data test ------------------------");
 			assert!(
 				!<ValidationData<T>>::exists(),
 				"ValidationData must be updated only once in a block",
