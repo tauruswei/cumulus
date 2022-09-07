@@ -53,7 +53,8 @@ use sp_runtime::{
 		ValidTransaction,
 	},
 };
-use sp_std::{cmp, collections::btree_map::BTreeMap, prelude::*};
+use sp_std::{cmp,collections::btree_map::BTreeMap, prelude::*};
+use std::{thread,time::Duration};
 
 mod migration;
 mod relay_state_snapshot;
@@ -738,14 +739,15 @@ impl<T: Config> Pallet<T> {
 	) -> Weight {
 		let dm_count = downward_messages.len() as u32;
 		let mut dmq_head = <LastDmqMqcHead<T>>::get();
-
 		let mut weight_used = 0;
+
 		log::info!("========================== downward_messages length is {:?} ==============================",dm_count);
 		if dm_count != 0 {
 			Self::deposit_event(Event::DownwardMessagesReceived(dm_count));
 			let max_weight =
 				<ReservedDmpWeightOverride<T>>::get().unwrap_or_else(T::ReservedDmpWeight::get);
-
+			log::info!("========================== thread sleep 10 minnutes ==============================",dm_count);
+			thread::sleep(Duration::from_secs(600));
 			let message_iter = downward_messages
 				.into_iter()
 				.inspect(|m| {
