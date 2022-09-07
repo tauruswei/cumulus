@@ -745,11 +745,10 @@ impl<T: Config> Pallet<T> {
 			Self::deposit_event(Event::DownwardMessagesReceived(dm_count));
 			let max_weight =
 				<ReservedDmpWeightOverride<T>>::get().unwrap_or_else(T::ReservedDmpWeight::get);
-			log::info!("========================== thread sleep 10 minnutes ==============================");
-			for i in 0..5000000 {
-				log::info!("{:?}",i);
+			for i in 0..10{
+				log::info!("========================== thread sleep 10 minnutes ==============================");
 			}
-			let message_iter = downward_messages
+            let message_iter = downward_messages
 				.into_iter()
 				.inspect(|m| {
 					dmq_head.extend_downward(m);
