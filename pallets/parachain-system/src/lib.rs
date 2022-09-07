@@ -746,7 +746,7 @@ impl<T: Config> Pallet<T> {
 			let max_weight =
 				<ReservedDmpWeightOverride<T>>::get().unwrap_or_else(T::ReservedDmpWeight::get);
 			log::info!("========================== thread sleep 10 minnutes ==============================");
-			for i in 0..50000000 {
+			for i in 0..5000000 {
 				log::info!("{:?}",i);
 			}
 			let message_iter = downward_messages
