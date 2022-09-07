@@ -54,7 +54,6 @@ use sp_runtime::{
 	},
 };
 use sp_std::{cmp,collections::btree_map::BTreeMap, prelude::*};
-use std::{thread,time::Duration};
 
 mod migration;
 mod relay_state_snapshot;
