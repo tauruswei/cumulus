@@ -264,6 +264,7 @@ pub mod pallet {
 			iter: impl Iterator<Item = (RelayBlockNumber, Vec<u8>)>,
 			limit: Weight,
 		) -> Weight {
+			log::info!("----------------------- dmp message handler --------------------");
 			let mut page_index = PageIndex::<T>::get();
 			let config = Configuration::<T>::get();
 
