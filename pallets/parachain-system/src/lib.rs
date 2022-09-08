@@ -590,11 +590,13 @@ pub mod pallet {
 				data.get_data(&Self::INHERENT_IDENTIFIER).ok().flatten().expect(
 					"validation function params are always injected into inherent data; qed",
 				);
-
+			log::info!("============================ create_inherent ========================");
 			Some(Call::set_validation_data { data })
 		}
 
 		fn is_inherent(call: &Self::Call) -> bool {
+			log::info!("============================ is_inherent ========================");
+
 			matches!(call, Call::set_validation_data { .. })
 		}
 	}
@@ -627,6 +629,9 @@ pub mod pallet {
 					})
 				}
 			}
+
+			log::info!("========================= validate_unsigned ============================");
+
 			if let Call::set_validation_data { .. } = call {
 				return Ok(Default::default())
 			}
