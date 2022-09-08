@@ -52,6 +52,7 @@ where
 	B::Extrinsic: ExtrinsicCall,
 	<B::Extrinsic as Extrinsic>::Call: IsSubType<crate::Call<PSC>>,
 {
+	log::info!("-------------------------- validate_block -------------------------------");
 	let block_data =
 		cumulus_primitives_core::ParachainBlockData::<B>::decode(&mut &params.block_data.0[..])
 			.expect("Invalid parachain block data");
