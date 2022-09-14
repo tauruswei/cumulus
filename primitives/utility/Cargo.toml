@@ -22,6 +22,7 @@ cumulus-primitives-core = { path = "../core", default-features = false }
 # Other dependencies
 codec = { package = "parity-scale-codec", version = "2.3.0", default-features = false, features = [ "derive" ] }
 
+log = { version = "0.4.14", default-features = false }
 
 [features]
 default = [ "std" ]
@@ -35,4 +36,5 @@ std = [
 	"sp-trie/std",
 	"frame-support/std",
 	"cumulus-primitives-core/std",
+	"log/std",
 ]

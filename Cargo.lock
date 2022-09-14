@@ -1853,6 +1853,7 @@ version = "0.1.0"
 dependencies = [
  "cumulus-primitives-core",
  "frame-support",
+ "log",
  "parity-scale-codec",
  "polkadot-core-primitives",
  "polkadot-parachain",
