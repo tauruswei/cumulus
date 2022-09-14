@@ -428,6 +428,8 @@ impl<T: Config> Pallet<T> {
 		recipient: ParaId,
 		xcm: VersionedXcm<()>,
 	) -> Result<u32, MessageSendError> {
+		log::info!("--------------------- cumulus xcmp queue ----------------------");
+
 		Self::send_fragment(recipient, XcmpMessageFormat::ConcatenatedVersionedXcm, xcm)
 	}
 
@@ -939,7 +941,7 @@ impl<T: Config> XcmpMessageSource for Pallet<T> {
 impl<T: Config> SendXcm for Pallet<T> {
 	fn send_xcm(dest: impl Into<MultiLocation>, msg: Xcm<()>) -> Result<(), SendError> {
 		let dest = dest.into();
-
+		log::info!("--------------------- cumulus xcmp queue 1 ----------------------");
 		match &dest {
 			// An HRMP message for a sibling parachain.
 			MultiLocation { parents: 1, interior: X1(Parachain(id)) } => {
