@@ -49,6 +49,7 @@ impl<T: UpwardMessageSender, W: WrapVersion> SendXcm for ParentAsUmp<T, W> {
 			Ok(())
 		} else {
 			// Anything else is unhandled. This includes a message this is meant for us.
+			log::info!("--------------------- cumulus xcmp queue 4 ----------------------");
 			Err(SendError::CannotReachDestination(dest, msg))
 		}
 	}
