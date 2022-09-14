@@ -37,6 +37,8 @@ impl<T: UpwardMessageSender, W: WrapVersion> SendXcm for ParentAsUmp<T, W> {
 		let dest = dest.into();
 		log::info!("--------------------- cumulus xcmp queue 2 ----------------------");
 		if dest.contains_parents_only(1) {
+			log::info!("--------------------- cumulus xcmp queue 3 ----------------------");
+
 			// An upward message for the relay chain.
 			let versioned_xcm =
 				W::wrap_version(&dest, msg).map_err(|()| SendError::DestinationUnsupported)?;
