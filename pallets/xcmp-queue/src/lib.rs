@@ -39,6 +39,7 @@ use cumulus_primitives_core::{
 	ParaId, XcmpMessageFormat, XcmpMessageHandler, XcmpMessageSource,
 };
 use frame_support::weights::{constants::WEIGHT_PER_MILLIS, Weight};
+use log::info;
 use rand_chacha::{
 	rand_core::{RngCore, SeedableRng},
 	ChaChaRng,
@@ -469,6 +470,7 @@ impl<T: Config> Pallet<T> {
 	) -> Result<Weight, XcmError> {
 		let hash = Encode::using_encoded(&xcm, T::Hashing::hash);
 		log::debug!("Processing XCMP-XCM: {:?}", &hash);
+		log::info!("---------------------- handle_xcm_message --------------------");
 		let (result, event) = match Xcm::<T::Call>::try_from(xcm) {
 			Ok(xcm) => {
 				let location = (1, Parachain(sender.into()));
@@ -496,6 +498,8 @@ impl<T: Config> Pallet<T> {
 		let mut last_remaining_fragments;
 		let mut remaining_fragments = &data[..];
 		let mut weight_used = 0;
+		log::info!("---------------------- process_xcmp_message --------------------");
+
 		match format {
 			XcmpMessageFormat::ConcatenatedVersionedXcm => {
 				while !remaining_fragments.is_empty() {
@@ -624,6 +628,8 @@ impl<T: Config> Pallet<T> {
 		if status.len() == 0 {
 			return 0
 		}
+
+		log::info!("---------------------- service_xcmp_queue ----------------------");
 
 		let QueueConfigData {
 			resume_threshold,
@@ -755,7 +761,7 @@ impl<T: Config> XcmpMessageHandler for Pallet<T> {
 		max_weight: Weight,
 	) -> Weight {
 		let mut status = <InboundXcmpStatus<T>>::get();
-
+		log::info!("------------------- handle_xcmp_messages --------------------");
 		let QueueConfigData { suspend_threshold, drop_threshold, .. } = <QueueConfig<T>>::get();
 
 		for (sender, sent_at, data) in iter {

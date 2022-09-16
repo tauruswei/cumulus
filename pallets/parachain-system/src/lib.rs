@@ -793,6 +793,7 @@ impl<T: Config> Pallet<T> {
 	) -> Weight {
 		// First, check that all submitted messages are sent from channels that exist. The
 		// channel exists if its MQC head is present in `vfp.hrmp_mqc_heads`.
+		log::info!("----------------------- process_inbound_horizontal_messages ---------------------------");
 		for sender in horizontal_messages.keys() {
 			// A violation of the assertion below indicates that one of the messages submitted
 			// by the collator was sent from a sender that doesn't have a channel opened to
