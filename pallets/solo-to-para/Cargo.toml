@@ -7,11 +7,11 @@ description = "Adds functionality to migrate from a Solo to a Parachain"
 
 [dependencies]
 # Substrate dependencies
-frame-support = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "polkadot-v0.9.16" }
-frame-system = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "polkadot-v0.9.16" }
-sp-std = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "polkadot-v0.9.16" }
-sp-runtime = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "polkadot-v0.9.16" }
-pallet-sudo = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "polkadot-v0.9.16" }
+frame-support = { git = "https://github.com/tauruswei/substrate", default-features = false, branch = "polkadot-v0.9.16" }
+frame-system = { git = "https://github.com/tauruswei/substrate", default-features = false, branch = "polkadot-v0.9.16" }
+sp-std = { git = "https://github.com/tauruswei/substrate", default-features = false, branch = "polkadot-v0.9.16" }
+sp-runtime = { git = "https://github.com/tauruswei/substrate", default-features = false, branch = "polkadot-v0.9.16" }
+pallet-sudo = { git = "https://github.com/tauruswei/substrate", default-features = false, branch = "polkadot-v0.9.16" }
 
 # Cumulus dependencies
 cumulus-pallet-parachain-system = { default-features = false, path = "../parachain-system" }

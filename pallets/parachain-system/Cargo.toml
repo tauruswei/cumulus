@@ -16,18 +16,18 @@ polkadot-parachain = { git = "https://github.com/tauruswei/polkadot", default-fe
 xcm = { git = "https://github.com/tauruswei/polkadot", default-features = false, branch = "release-v0.9.16" }
 
 # Substrate dependencies
-frame-support = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "polkadot-v0.9.16" }
-pallet-balances = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "polkadot-v0.9.16" }
-sp-core = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "polkadot-v0.9.16" }
-sp-inherents = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "polkadot-v0.9.16" }
-sp-io = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "polkadot-v0.9.16" }
-sp-std = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "polkadot-v0.9.16" }
-sp-runtime = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "polkadot-v0.9.16" }
-sp-version = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "polkadot-v0.9.16" }
-frame-system = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "polkadot-v0.9.16" }
-sp-state-machine = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "polkadot-v0.9.16" }
-sp-trie = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "polkadot-v0.9.16" }
-sp-externalities = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "polkadot-v0.9.16" }
+frame-support = { git = "https://github.com/tauruswei/substrate", default-features = false, branch = "polkadot-v0.9.16" }
+pallet-balances = { git = "https://github.com/tauruswei/substrate", default-features = false, branch = "polkadot-v0.9.16" }
+sp-core = { git = "https://github.com/tauruswei/substrate", default-features = false, branch = "polkadot-v0.9.16" }
+sp-inherents = { git = "https://github.com/tauruswei/substrate", default-features = false, branch = "polkadot-v0.9.16" }
+sp-io = { git = "https://github.com/tauruswei/substrate", default-features = false, branch = "polkadot-v0.9.16" }
+sp-std = { git = "https://github.com/tauruswei/substrate", default-features = false, branch = "polkadot-v0.9.16" }
+sp-runtime = { git = "https://github.com/tauruswei/substrate", default-features = false, branch = "polkadot-v0.9.16" }
+sp-version = { git = "https://github.com/tauruswei/substrate", default-features = false, branch = "polkadot-v0.9.16" }
+frame-system = { git = "https://github.com/tauruswei/substrate", default-features = false, branch = "polkadot-v0.9.16" }
+sp-state-machine = { git = "https://github.com/tauruswei/substrate", default-features = false, branch = "polkadot-v0.9.16" }
+sp-trie = { git = "https://github.com/tauruswei/substrate", default-features = false, branch = "polkadot-v0.9.16" }
+sp-externalities = { git = "https://github.com/tauruswei/substrate", default-features = false, branch = "polkadot-v0.9.16" }
 
 # Other Dependencies
 codec = { package = "parity-scale-codec", version = "2.3.0", default-features = false, features = ["derive"]}
@@ -43,10 +43,10 @@ hex-literal = "0.2.1"
 lazy_static = "1.4"
 
 # Substrate dependencies
-sp-version = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.16" }
-sc-client-api = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.16" }
-sp-keyring = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.16" }
-sp-tracing = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.16" }
+sp-version = { git = "https://github.com/tauruswei/substrate", branch = "polkadot-v0.9.16" }
+sc-client-api = { git = "https://github.com/tauruswei/substrate", branch = "polkadot-v0.9.16" }
+sp-keyring = { git = "https://github.com/tauruswei/substrate", branch = "polkadot-v0.9.16" }
+sp-tracing = { git = "https://github.com/tauruswei/substrate", branch = "polkadot-v0.9.16" }
 
 # Cumulus dependencies
 cumulus-test-client = { path = "../../test/client" }
