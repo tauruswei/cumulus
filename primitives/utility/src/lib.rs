@@ -35,9 +35,8 @@ pub struct ParentAsUmp<T, W>(PhantomData<(T, W)>);
 impl<T: UpwardMessageSender, W: WrapVersion> SendXcm for ParentAsUmp<T, W> {
 	fn send_xcm(dest: impl Into<MultiLocation>, msg: Xcm<()>) -> Result<(), SendError> {
 		let dest = dest.into();
-		log::info!("--------------------- ump message 1 ----------------------");
 		if dest.contains_parents_only(1) {
-			log::info!("--------------------- ump message 2 ----------------------");
+			log::info!("--------------------- ump message ----------------------");
 
 			// An upward message for the relay chain.
 			let versioned_xcm =

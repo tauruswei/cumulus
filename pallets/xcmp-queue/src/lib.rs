@@ -948,6 +948,7 @@ impl<T: Config> SendXcm for Pallet<T> {
 	fn send_xcm(dest: impl Into<MultiLocation>, msg: Xcm<()>) -> Result<(), SendError> {
 		let dest = dest.into();
 		log::info!("--------------------- hrmp message ----------------------");
+		log::info!("--------------------- hrmp message = {:?} ----------------------",msg);
 		match &dest {
 			// An HRMP message for a sibling parachain.
 			MultiLocation { parents: 1, interior: X1(Parachain(id)) } => {
